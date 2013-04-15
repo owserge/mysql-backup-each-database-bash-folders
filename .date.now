@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+$loc=time;
+#$loc=$loc-30*60*60*24;
+
+($sec,$min,$hour,$mday,$mon,$year,$sec,$sec,$sec)=localtime($loc);
+$sec++;
+$mon++;
+
+$year=$year+"1900";
+if ($mday<"10") {$mday="0".$mday}
+if ($mon<"10") {$mon="0".$mon}
+if ($hour<"10") {$hour="0".$hour}
+if ($min<"10") {$min="0".$min}
+$nowtime="$year-$mon-$mday";
+print "$nowtime\n";
