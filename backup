@@ -1,0 +1,9 @@
+#!/bin/sh 
+
+password=your-password
+dateNow=$(/acp/bu/.date.now)
+
+mkdir ./$dateNow
+for i in `mysql -uroot -hlocalhost -p$password -e'show databases;' | /bin/grep -v information_schema';
+do mysqldump -uroot -hlocalhost -p$password $i > ./$datenow/$i; /bin/gzip ./datenow/$i;done       
+  
